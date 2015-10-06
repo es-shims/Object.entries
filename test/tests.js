@@ -67,4 +67,16 @@ module.exports = function (entries, t) {
 		st.deepEqual(entries(o), [['a', 1], ['c', 3]], 'when "b" is deleted prior to being visited, it should not show up');
 		st.end();
 	});
+
+	t.test('not-yet-visited keys made non-enumerable on [[Get]] must not show up in output', { skip: !define.supportsDescriptors }, function (st) {
+		var o = { a: 'A', b: 'B' };
+		Object.defineProperty(o, 'a', {
+			get: function () {
+				Object.defineProperty(o, 'b', { enumerable: false });
+				return 'A';
+			}
+		});
+		st.deepEqual(entries(o), [['a', 'A']], 'when "b" is made non-enumerable prior to being visited, it should not show up');
+		st.end();
+	});
 };
