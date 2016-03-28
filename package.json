@@ -46,7 +46,7 @@
 		"covert": "^1.1.0",
 		"jscs": "^2.10.1",
 		"nsp": "^2.2.0",
-		"eslint": "^2.1.0",
+		"eslint": "^2.5.2",
 		"@ljharb/eslint-config": "^2.1.1",
 		"@es-shims/api": "^1.1.0"
 	},
