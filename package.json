@@ -2,7 +2,7 @@
 	"name": "object.entries",
 	"version": "1.0.3",
 	"author": "Jordan Harband",
-	"description": "ES7 spec-compliant Object.entries shim.",
+	"description": "ES2017 spec-compliant Object.entries shim.",
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
@@ -30,6 +30,8 @@
 		"entries",
 		"values",
 		"ES7",
+		"ES8",
+		"ES2017",
 		"shim",
 		"object",
 		"keys",
