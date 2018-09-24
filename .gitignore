@@ -27,3 +27,8 @@ build/Release
 node_modules
 
 test.html
+
+# Only apps should have lockfiles
+npm-shrinkwrap.json
+package-lock.json
+yarn.lock
