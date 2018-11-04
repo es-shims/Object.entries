@@ -46,13 +46,13 @@
 	},
 	"devDependencies": {
 		"@es-shims/api": "^2.1.2",
-		"@ljharb/eslint-config": "^9.0.1",
+		"@ljharb/eslint-config": "^13.0.0",
 		"array-map": "^0.0.0",
 		"covert": "^1.1.0",
-		"eslint": "^3.11.1",
+		"eslint": "^5.8.0",
 		"jscs": "^3.0.7",
-		"nsp": "^2.6.2",
-		"tape": "^4.6.3"
+		"nsp": "^3.2.1",
+		"tape": "^4.9.1"
 	},
 	"testling": {
 		"files": "test/index.js",
