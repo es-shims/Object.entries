@@ -49,8 +49,8 @@
 		"@ljharb/eslint-config": "^13.1.1",
 		"array-map": "^0.0.0",
 		"covert": "^1.1.1",
-		"eslint": "^5.11.1",
-		"tape": "^4.9.2"
+		"eslint": "^5.16.0",
+		"tape": "^4.11.0"
 	},
 	"testling": {
 		"files": "test/index.js",
