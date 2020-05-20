@@ -7,6 +7,7 @@
 	"main": "index.js",
 	"scripts": {
 		"prepublish": "safe-publish-latest",
+		"lint": "eslint .",
 		"pretest": "npm run --silent lint",
 		"test": "npm run --silent tests-only",
 		"posttest": "npx aud --production",
@@ -14,7 +15,9 @@
 		"test:shimmed": "node test/shimmed",
 		"test:module": "node test/index",
 		"coverage": "covert test/*.js",
-		"lint": "eslint ."
+		"preversion": "auto-changelog",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
 	"repository": {
 		"type": "git",
@@ -45,6 +48,7 @@
 		"@ljharb/eslint-config": "^17.1.0",
 		"array-map": "^0.0.0",
 		"aud": "^1.1.2",
+		"auto-changelog": "^2.0.0",
 		"covert": "^1.1.1",
 		"eslint": "^7.0.0",
 		"functions-have-names": "^1.2.1",
@@ -71,5 +75,12 @@
 	},
 	"engines": {
 		"node": ">= 0.4"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "keepachangelog",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false
 	}
 }
