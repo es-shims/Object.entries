@@ -10,7 +10,7 @@
 		"pretest": "npm run --silent lint",
 		"test": "npm run --silent tests-only",
 		"posttest": "npx aud --production",
-		"tests-only": "es-shim-api && npm run --silent test:shimmed && npm run --silent test:module",
+		"tests-only": "es-shim-api --bound && npm run --silent test:shimmed && npm run --silent test:module",
 		"test:shimmed": "node test/shimmed",
 		"test:module": "node test/index",
 		"coverage": "covert test/*.js",
