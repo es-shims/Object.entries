@@ -12,8 +12,7 @@
 		"pretest": "npm run --silent lint",
 		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
-		"tests-only": "tape 'test/**/*.js'",
-		"coverage": "covert test/*.js",
+		"tests-only": "nyc tape 'test/**/*.js'",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
@@ -47,10 +46,10 @@
 		"array-map": "^0.0.0",
 		"aud": "^1.1.2",
 		"auto-changelog": "^2.0.0",
-		"covert": "^1.1.1",
 		"eslint": "^7.0.0",
 		"functions-have-names": "^1.2.1",
 		"has-strict-mode": "^1.0.0",
+		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.0.0"
 	},
