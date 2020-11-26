@@ -8,14 +8,12 @@
 	"scripts": {
 		"prepublish": "safe-publish-latest",
 		"lint": "eslint .",
+		"postlint": "es-shim-api --bound",
 		"pretest": "npm run --silent lint",
-		"test": "npm run --silent tests-only",
+		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
-		"tests-only": "es-shim-api --bound && npm run --silent test:shimmed && npm run --silent test:module",
-		"test:shimmed": "node test/shimmed",
-		"test:module": "node test/index",
+		"tests-only": "tape 'test/**/*.js'",
 		"coverage": "covert test/*.js",
-		"preversion": "auto-changelog",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
@@ -52,6 +50,7 @@
 		"covert": "^1.1.1",
 		"eslint": "^7.0.0",
 		"functions-have-names": "^1.2.1",
+		"has-strict-mode": "^1.0.0",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.0.0"
 	},
